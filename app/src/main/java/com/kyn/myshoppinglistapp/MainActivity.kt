@@ -38,25 +38,3 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun getShoppingApp(modifier: Modifier = Modifier){
-    var sItems by remember { mutableStateOf(listOf<ShoppingItem>()) }
-    Column (modifier = modifier,
-        verticalArrangement = Arrangement.Center){
-        Button (onClick = {},
-            modifier = Modifier.align(Alignment.CenterHorizontally)){
-            Text("Add Item")
-        }
-
-        LazyColumn(modifier = Modifier.fillMaxSize().padding(16.dp)
-        ){
-            items(sItems){
-
-            }
-        }
-    }
-}
-data class ShoppingItem(val id:Int,
-                        var name: String,
-                        var quantity: Int,
-                        var isEditing: Boolean = false)
